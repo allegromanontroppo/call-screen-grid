@@ -1,0 +1,15 @@
+header {
+  padding: 8px;
+
+  display: flex;
+  justify-content: space-between;
+
+  .waiting-area-name {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .organisation-name {
+    font-size: 12px;
+  }
+}

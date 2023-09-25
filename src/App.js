@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import VideoArea from "./components/video-area";
 
-function App() {
+import "./styles/app.scss";
+import classNames from "classnames";
+
+export default function App() {
+  const [sidebar, setSidebar] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classNames("app", { "side-bar-visible": sidebar })}>
+      <Header />
+      <VideoArea />
+      <Footer sidebarVisible={sidebar} onToggleSidebar={setSidebar} />
     </div>
   );
 }
-
-export default App;

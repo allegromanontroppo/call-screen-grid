@@ -1,0 +1,81 @@
+.video-area {
+  display: grid;
+  gap: 0.5rem;
+
+  grid-template-areas:
+    "side-bar"
+    "participants";
+
+  grid-template-rows: 0 1fr;
+
+  @media screen and (min-width: 1440px) {
+    grid-template-rows: auto;
+    grid-template-areas: "participants side-bar";
+
+    grid-template-columns: 1fr 0;
+  }
+}
+
+.side-bar-visible .video-area {
+  grid-template-rows: 100px 1fr;
+
+  @media screen and (min-width: 1440px) {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 230px;
+  }
+}
+
+.participants {
+  grid-area: participants;
+
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 0.5fr);
+  grid-template-rows: repeat(2, 0.5fr);
+}
+
+.participant {
+  background: no-repeat;
+  border-radius: 0.5rem;
+  background-position: center;
+  background-size: cover;
+  padding: 0.5rem;
+
+  position: relative;
+
+  .name {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+
+    background: $colour-grey-dark;
+    padding: 2px 8px 2px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 0.25rem;
+  }
+}
+
+.side-bar {
+  grid-area: side-bar;
+  display: none;
+
+  .participant {
+    width: 162px;
+
+    @media screen and (min-width: 1440px) {
+      width: auto;
+      height: 112px;
+    }
+  }
+}
+
+.side-bar-visible .side-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: column;
+  }
+}
