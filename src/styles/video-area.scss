@@ -12,7 +12,11 @@
     grid-template-areas: "participants thumbnails";
 
     grid-template-rows: auto;
-    grid-template-columns: 1fr 230px;
+    grid-template-columns: 1fr 150px;
+
+    @media screen and (min-width: 900px) {
+      grid-template-columns: 1fr 230px;
+    }
   }
 }
 
@@ -62,6 +66,10 @@
 
   .participant {
     width: auto;
-    height: 112px;
+    height: 75px;
+
+    @media screen and (min-width: 900px) {
+      height: 112px;
+    }
   }
 }

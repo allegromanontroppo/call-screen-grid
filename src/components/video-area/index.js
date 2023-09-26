@@ -11,7 +11,7 @@ export default function VideoArea() {
     <div
       className={classNames(
         "video-area",
-        aspectRatio > 1.4 ? "landscape" : "portrait"
+        aspectRatio > 1.6 ? "landscape" : "portrait"
       )}
       ref={videoAreaRef}
     >
