@@ -12,7 +12,9 @@ export default function App() {
   return (
     <div className={classNames("app", { "side-bar-visible": sidebar })}>
       <Header />
-      <VideoArea />
+      <main>
+        <VideoArea />
+      </main>
       <Footer sidebarVisible={sidebar} onToggleSidebar={setSidebar} />
     </div>
   );

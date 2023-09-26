@@ -3,23 +3,14 @@
   gap: 0.5rem;
 
   grid-template-areas:
-    "side-bar"
+    "thumbnails"
     "participants";
 
-  grid-template-rows: 0 1fr;
-
-  @media screen and (min-width: 1440px) {
-    grid-template-rows: auto;
-    grid-template-areas: "participants side-bar";
-
-    grid-template-columns: 1fr 0;
-  }
-}
-
-.side-bar-visible .video-area {
   grid-template-rows: 100px 1fr;
 
-  @media screen and (min-width: 1440px) {
+  &.landscape {
+    grid-template-areas: "participants thumbnails";
+
     grid-template-rows: auto;
     grid-template-columns: 1fr 230px;
   }
@@ -56,26 +47,21 @@
   }
 }
 
-.side-bar {
-  grid-area: side-bar;
-  display: none;
+.thumbnails {
+  grid-area: thumbnails;
+  display: flex;
+  justify-content: flex-end;
 
   .participant {
     width: 162px;
-
-    @media screen and (min-width: 1440px) {
-      width: auto;
-      height: 112px;
-    }
   }
 }
 
-.side-bar-visible .side-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+.landscape .thumbnails {
+  flex-direction: column;
 
-  @media screen and (min-width: 1440px) {
-    flex-direction: column;
+  .participant {
+    width: auto;
+    height: 112px;
   }
 }
